@@ -17,7 +17,6 @@ Requires(preun): php-pear
 Requires:       php-pear
 Requires:       php-pear-MDB2
 BuildArch:      noarch
-BuildRoot:      %{_tmppath}/%{name}-%{version}-buildroot
 
 %description
 MDB2 MySQLi driver.
