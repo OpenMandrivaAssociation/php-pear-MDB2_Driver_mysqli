@@ -5,7 +5,7 @@
 Summary:        %{_pearname} - mysqli MDB2 driver
 Name:           php-pear-%{_pearname}
 Version:        1.5.0b1
-Release:        %mkrel 1
+Release:        %mkrel 2
 Epoch:          0
 License:        PHP License
 Group:          Development/PHP
@@ -17,7 +17,7 @@ Requires(preun): php-pear
 Requires:       php-pear
 Requires:       php-pear-MDB2
 BuildArch:      noarch
-BuildRoot:      %{_tmppath}/%{name}-%{version}-buildroot
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
 MDB2 MySQLi driver.
