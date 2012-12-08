@@ -52,7 +52,7 @@ pear install --nodeps --soft --force --register-only \
 %if %mdkversion < 201000
 if [ "$1" -eq "0" ]; then
     pear uninstall --nodeps --ignore-errors --register-only \
-        %{upstream_name} >/dev/null || :
+        %{pear_name} >/dev/null || :
 fi
 %endif
 
@@ -61,4 +61,84 @@ fi
 %{_datadir}/pear/%{_class}
 %{_datadir}/pear/data/%{upstream_name}
 %{_datadir}/pear/packages/%{upstream_name}.xml
+
+
+
+%changelog
+* Fri May 27 2011 Oden Eriksson <oeriksson@mandriva.com> 1:1.5.0-0.0.b3.1mdv2011.0
++ Revision: 679280
+- 1.5.0b3
+
+* Wed May 04 2011 Oden Eriksson <oeriksson@mandriva.com> 1:1.5.0-0.0.b2.3
++ Revision: 667589
+- mass rebuild
+
+* Fri Dec 03 2010 Oden Eriksson <oeriksson@mandriva.com> 1:1.5.0-0.0.b2.2mdv2011.0
++ Revision: 607117
+- rebuild
+
+* Fri Mar 26 2010 Oden Eriksson <oeriksson@mandriva.com> 1:1.5.0-0.0.b2.1mdv2010.1
++ Revision: 527642
+- 1.5.0b2
+- fix versioning
+
+* Thu Nov 26 2009 Guillaume Rousse <guillomovitch@mandriva.org> 0:1.5.0b1-4mdv2010.1
++ Revision: 470291
+- spec cleanup
+- use pear installer
+- don't ship tests, even in documentation
+- own all directories
+- use rpm filetriggers starting from mandriva 2010.1
+
+* Thu Sep 03 2009 Christophe Fergeau <cfergeau@mandriva.com> 0:1.5.0b1-4mdv2010.0
++ Revision: 426654
+- rebuild
+
+* Wed Dec 31 2008 Oden Eriksson <oeriksson@mandriva.com> 0:1.5.0b1-3mdv2009.1
++ Revision: 321874
+- rebuild
+
+* Thu Jul 17 2008 Oden Eriksson <oeriksson@mandriva.com> 0:1.5.0b1-2mdv2009.0
++ Revision: 236907
+- rebuild
+
+* Tue Mar 25 2008 Oden Eriksson <oeriksson@mandriva.com> 0:1.5.0b1-1mdv2008.1
++ Revision: 189941
+- 1.5.0b1 (fixes CVE-2007-5934)
+
+  + Olivier Blin <oblin@mandriva.com>
+    - restore BuildRoot
+
+  + Thierry Vignaud <tv@mandriva.org>
+    - kill re-definition of %%buildroot on Pixel's request
+
+* Fri May 04 2007 Oden Eriksson <oeriksson@mandriva.com> 0:1.4.1-1mdv2008.0
++ Revision: 22355
+- 1.4.1
+
+* Fri Apr 20 2007 Oden Eriksson <oeriksson@mandriva.com> 0:1.4.0-1mdv2008.0
++ Revision: 15785
+- fix build
+- 1.4.0
+
+
+* Wed Jan 17 2007 David Walluck <walluck@mandriva.org> 1.3.0-2mdv2007.0
++ Revision: 110006
+- Requires: php-mysqli
+
+* Fri Dec 15 2006 David Walluck <walluck@mandriva.org> 0:1.3.0-1mdv2007.1
++ Revision: 97218
+- 1.3.0
+
+* Sat Nov 11 2006 Oden Eriksson <oeriksson@mandriva.com> 0:1.2.1-1mdv2007.0
++ Revision: 81997
+- Import php-pear-MDB2_Driver_mysqli
+
+* Wed Aug 30 2006 David Walluck <walluck@mandriva.org> 0:1.2.1-1mdv2007.0
+- 1.2.1
+- don't own directories since they are owned by php-pear-MDB2
+- replace tabs with spaces
+
+* Fri May 26 2006 David Walluck <walluck@mandriva.org> 0:1.0.3-1mdv2007.0
+- release
 
