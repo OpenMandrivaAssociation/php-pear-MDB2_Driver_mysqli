@@ -17,7 +17,6 @@ Requires(preun): php-pear
 Requires:       php-pear
 BuildRequires:  php-pear
 BuildArch:      noarch
-BuildRoot:	%{_tmppath}/%{name}-%{version}
 
 %description
 MDB2 MySQLi driver.
@@ -40,7 +39,6 @@ install -d %{buildroot}%{_datadir}/pear/packages
 install -m 644 %{upstream_name}.xml %{buildroot}%{_datadir}/pear/packages
 
 %clean
-rm -rf %{buildroot}
 
 
 
