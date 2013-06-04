@@ -1,16 +1,17 @@
 %define        _class           MDB2
 %define        _subclass        Driver_mysqli
 %define        upstream_name    %{_class}_%{_subclass}
+%define			beta b4
 
 Name:           php-pear-%{upstream_name}
-Version:        1.5.0
-Release:        0.0.b4
+Version:        1.5.0b4
+Release:        1
 Summary:	Mysqli MDB2 driver
 Epoch:          1
 License:        PHP License
 Group:          Development/PHP
 URL:            http://pear.php.net/package/MDB2_Driver_mysqli/
-Source0:        http://download.pear.php.net/package/MDB2_Driver_mysqli-%{version}b4.tgz
+Source0:        http://download.pear.php.net/package/MDB2_Driver_mysqli-%{version}.tgz
 Requires:       php-mysqli
 Requires(post): php-pear
 Requires(preun): php-pear
@@ -22,13 +23,11 @@ BuildArch:      noarch
 MDB2 MySQLi driver.
 
 %prep
-%setup -q -c -n %{name}-%{version}b3
-mv package.xml %{upstream_name}-%{version}b3/%{upstream_name}.xml
+%setup -q -c -n %{name}-%{version}%{beta}
+mv package.xml %{upstream_name}-%{version}%{beta}/%{upstream_name}.xml
 
 %install
-%{__rm} -rf %{buildroot}
-
-cd %{upstream_name}-%{version}b3
+cd %{upstream_name}-%{version}%{beta}
 pear install --nodeps --packagingroot %{buildroot} %{upstream_name}.xml
 rm -rf %{buildroot}%{_datadir}/pear/.??*
 
@@ -127,5 +126,6 @@ install -m 644 %{upstream_name}.xml %{buildroot}%{_datadir}/pear/packages
 
 * Fri May 26 2006 David Walluck <walluck@mandriva.org> 0:1.0.3-1mdv2007.0
 - release
+
 
 
