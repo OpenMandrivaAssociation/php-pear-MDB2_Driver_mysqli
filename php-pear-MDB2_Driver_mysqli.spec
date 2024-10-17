@@ -10,7 +10,7 @@ Version:	1.5.0
 Release:	0.0.%{beta}
 License:	PHP License
 Group:		Development/PHP
-Url:		http://pear.php.net/package/MDB2_Driver_mysqli/
+Url:		https://pear.php.net/package/MDB2_Driver_mysqli/
 Source0:	http://download.pear.php.net/package/MDB2_Driver_mysqli-%{version}%{beta}.tgz
 BuildArch:	noarch
 BuildRequires:	php-pear
